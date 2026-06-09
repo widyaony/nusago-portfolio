@@ -10,58 +10,75 @@ export default function Hero() {
       flex-col
       justify-center
       items-center
-      bg-gradient-to-r
-      from-[#002D01]
-      via-[#006C02]
-      to-[#002D01]
+      px-6
+      relative
+      overflow-hidden
+      bg-zinc-50
       "
     >
       {}
-      <div className="mb-6 bg-white w-48 h-48 rounded-full shadow-xl flex items-center justify-center p-6 overflow-hidden">
+      <div className="mb-2 w-full max-w-4xl flex justify-center items-center hover:scale-[1.01] transition-transform duration-300">
         <Image 
           src="/logo-nusago.png" 
           alt="Logo NusaGo"
-          width={160}           
-          height={160}           
-          className="object-contain mix-blend-multiply" 
+          width={800}           
+          height={320}           
+          className="object-contain w-full h-auto max-h-[380px] sm:max-h-[450px]" 
           priority
         />
       </div>
 
-      <p className="text-white text-xl mt-4 opacity-90 tracking-wide font-light">
-        {project.subtitle}
-      </p>
+      {}
+      <div className="max-w-2xl text-center px-4 mt-2 font-sans">
+        <p className="text-xl sm:text-2xl font-medium tracking-wide leading-relaxed text-zinc-800">
+          {project.subtitle}
+        </p>
+      </div>
 
-      <div className="flex gap-5 mt-10">
+      {}
+      <div className="flex flex-col sm:flex-row gap-5 mt-12 w-full sm:w-auto px-4 sm:px-0 font-sans">
         <a
           href={project.figma}
           target="_blank"
+          rel="noopener noreferrer"
           className="
-          bg-white
-          text-[#006C02]
-          px-8
+          bg-[#00D95A]
+          text-white
+          px-10
           py-4
           rounded-full
-          font-semibold
-          hover:bg-zinc-100
-          transition-colors
-          shadow-md
+          font-bold
+          text-center
+          hover:bg-[#00C250]
+          hover:scale-[1.03]
+          active:scale-[0.98]
+          transition-all
+          duration-200
+          shadow-[0_10px_25px_rgba(0,217,90,0.3)]
           "
         >
           Coba Prototype
         </a>
 
         <a
-          href="#prototype"
+          href="#empathize"
           className="
-          border
-          border-white
-          text-white
-          px-8
+          border-2
+          border-zinc-800
+          text-zinc-800
+          bg-white
+          px-10
           py-4
           rounded-full
-          hover:bg-white/10
-          transition-colors
+          font-bold
+          text-center
+          hover:bg-zinc-800
+          hover:text-white
+          hover:scale-[1.03]
+          active:scale-[0.98]
+          transition-all
+          duration-200
+          shadow-sm
           "
         >
           Kunjungi Projek
