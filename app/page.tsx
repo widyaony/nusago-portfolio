@@ -1,39 +1,23 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import FigmaSection from "@/components/FigmaSection";
-import Test from "@/components/Test";
 import Footer from "@/components/Footer";
+import EmpathizeSection from "@/components/EmpathizeSection"; 
+import PortfolioSections from "@/components/PortfolioSections"; 
 
 export default function Home() {
   return (
-    <>
+    <main className="bg-white text-neutral-900 min-h-screen"> 
       <Navbar />
 
       <Hero />
 
-      <FigmaSection
-        id="empathize"
-        title="Empathize"
-      />
+      {/* TAHAP 1: Empathize */}
+      <EmpathizeSection />
 
-      <FigmaSection
-        id="define"
-        title="Define"
-      />
-
-      <FigmaSection
-        id="ideate"
-        title="Ideate"
-      />
-
-      <FigmaSection
-        id="prototype"
-        title="Prototype"
-      />
-
-      <Test />
+      {/* TAHAP 2 s/d 5: Define, Ideate, Prototype, Testing (Sudah digabung jadi satu di sini) */}
+      <PortfolioSections />
 
       <Footer />
-    </>
+    </main>
   );
 }
