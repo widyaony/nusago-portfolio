@@ -38,7 +38,7 @@ export default function EmpathizeSection() {
   ];
 
   return (
-    /* MENGGUNAKAN TRICK CSS GRADIENT UNTUK MEMBUAT EFEK KOTAK-KOTAK (GRID) FIGMA DI LATAR BELAKANG */
+    /* BACKGROUND GRID FIGMA */
     <div 
       className="bg-white" 
       style={{
@@ -52,35 +52,37 @@ export default function EmpathizeSection() {
       {/* ==================== SECTION 1: EMPATHIZE ==================== */}
       <section id="empathize" className="max-w-7xl mx-auto px-6 py-20 text-neutral-900 font-sans">
         <div className="mb-12 space-y-2 text-center">
-          <span className="text-emerald-700 text-xs font-bold tracking-wider uppercase bg-emerald-50/80 backdrop-blur-sm py-1.5 px-3 rounded-full border border-emerald-200">
+          {/* Badge diubah ke Hijau Tua Solid */}
+          <span className="text-emerald-900 text-xs font-bold tracking-wider uppercase bg-emerald-100/60 backdrop-blur-sm py-1.5 px-3 rounded-full border border-emerald-800/20">
             Proses Desain — Tahap 1
           </span>
           <h2 className="text-4xl font-extrabold tracking-tight text-neutral-900 pt-1">
             Empathize
           </h2>
-          <p className="text-neutral-600 max-w-2xl leading-relaxed text-sm md:text-base mx-auto补">
+          <p className="text-neutral-600 max-w-2xl leading-relaxed text-sm md:text-base mx-auto">
             Tahap awal untuk memahami kendala, kebutuhan, dan motivasi para pengguna transportasi umum di Indonesia melalui riset kualitatif terarah.
           </p>
         </div>
 
-        {/* SATU BARIS SATU CARD (LEBAR PAS - TIDAK TERLALU BESAR) */}
+        {/* LIST KARTU */}
         <div className="flex flex-col gap-12 max-w-3xl mx-auto">
           {empathizeData.map((item, index) => (
             <div 
               key={index} 
-              className="flex flex-col p-6 bg-white/90 backdrop-blur-sm border border-neutral-200 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 group w-full"
+              className="flex flex-col p-6 bg-neutral-50 border border-neutral-200 rounded-2xl transition-all duration-300 transform group w-full hover:-translate-y-1.5 hover:bg-white hover:border-emerald-800 hover:shadow-[0_12px_30px_rgba(11,63,43,0.08)]"
             >
               <div className="mb-4">
-                <h3 className="text-2xl font-bold text-emerald-700 mb-1 group-hover:text-emerald-800 transition-colors">
+                {/* Judul Kartu Hijau Tua */}
+                <h3 className="text-2xl font-bold text-emerald-800 mb-1 group-hover:text-emerald-900 transition-colors">
                   {item.title}
                 </h3>
-                <p className="text-neutral-600 text-sm leading-relaxed">
+                <p className="text-neutral-600 text-sm leading-relaxed transition-colors group-hover:text-neutral-800">
                   {item.description}
                 </p>
               </div>
 
-              {/* BINGKAI IFRAME LEBAR PROPORSIONAL ASPECT-VIDEO */}
-              <div className="w-full aspect-video min-h-[380px] bg-neutral-100 rounded-xl overflow-hidden border border-neutral-300 shadow-inner relative">
+              {/* BINGKAI IFRAME FIGMA */}
+              <div className="w-full aspect-video min-h-[380px] bg-neutral-100 rounded-xl overflow-hidden border border-neutral-200 shadow-inner relative transition-colors duration-300 group-hover:border-neutral-300">
                 <iframe 
                   src={item.figmaEmbedUrl}
                   className="w-full h-full border-0"
@@ -96,7 +98,8 @@ export default function EmpathizeSection() {
       {/* ==================== SECTION 2: DEFINE ==================== */}
       <section id="define" className="max-w-7xl mx-auto px-6 py-20 text-neutral-900 font-sans border-t border-neutral-200/60">
         <div className="mb-12 space-y-2 text-center">
-          <span className="text-emerald-700 text-xs font-bold tracking-wider uppercase bg-emerald-50/80 backdrop-blur-sm py-1.5 px-3 rounded-full border border-emerald-200">
+          {/* Badge diubah ke Hijau Tua Solid */}
+          <span className="text-emerald-900 text-xs font-bold tracking-wider uppercase bg-emerald-100/60 backdrop-blur-sm py-1.5 px-3 rounded-full border border-emerald-800/20">
             Proses Desain — Tahap 2
           </span>
           <h2 className="text-4xl font-extrabold tracking-tight text-neutral-900 pt-1">
@@ -107,24 +110,25 @@ export default function EmpathizeSection() {
           </p>
         </div>
 
-        {/* SATU BARIS SATU CARD (LEBAR PAS - TIDAK TERLALU BESAR) */}
+        {/* LIST KARTU */}
         <div className="flex flex-col gap-12 max-w-3xl mx-auto">
           {defineData.map((item, index) => (
             <div 
               key={index} 
-              className="flex flex-col p-6 bg-white/90 backdrop-blur-sm border border-neutral-200 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 group w-full"
+              className="flex flex-col p-6 bg-neutral-50 border border-neutral-200 rounded-2xl transition-all duration-300 transform group w-full hover:-translate-y-1.5 hover:bg-white hover:border-emerald-800 hover:shadow-[0_12px_30px_rgba(11,63,43,0.08)]"
             >
               <div className="mb-4">
-                <h3 className="text-2xl font-bold text-emerald-700 mb-1 group-hover:text-emerald-800 transition-colors">
+                {/* Judul Kartu Hijau Tua */}
+                <h3 className="text-2xl font-bold text-emerald-800 mb-1 group-hover:text-emerald-900 transition-colors">
                   {item.title}
                 </h3>
-                <p className="text-neutral-600 text-sm leading-relaxed">
+                <p className="text-neutral-600 text-sm leading-relaxed transition-colors group-hover:text-neutral-800">
                   {item.description}
                 </p>
               </div>
 
-              {/* BINGKAI IFRAME LEBAR PROPORSIONAL ASPECT-VIDEO */}
-              <div className="w-full aspect-video min-h-[380px] bg-neutral-100 rounded-xl overflow-hidden border border-neutral-300 shadow-inner relative">
+              {/* BINGKAI IFRAME FIGMA */}
+              <div className="w-full aspect-video min-h-[380px] bg-neutral-100 rounded-xl overflow-hidden border border-neutral-200 shadow-inner relative transition-colors duration-300 group-hover:border-neutral-300">
                 <iframe 
                   src={item.figmaEmbedUrl}
                   className="w-full h-full border-0"

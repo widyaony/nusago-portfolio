@@ -1,21 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { Copy, Check, Play, ArrowUpRight } from "lucide-react";
+import { Play, ArrowUpRight } from "lucide-react";
 
 export default function PortfolioSections() {
-  // ==========================================
-  // STATE MANAGEMENT
-  // ==========================================
-  const [copiedText, setCopiedText] = useState<string | null>(null);
   const [prototypeMode, setPrototypeMode] = useState<"design" | "player">("player");
 
-  // ==========================================
-  // CONFIGURATION DATA & LINKS
-  // ==========================================
   const figmaDesignLink = "https://www.figma.com/design/CgWHWxrhmcAHSufSmq3fyf/UI-UX-DESIGN?node-id=176-1160"; 
-  
-  // Link Embed Prototipe Baru
   const figmaEmbedPlayerLink = "https://embed.figma.com/proto/CgWHWxrhmcAHSufSmq3fyf/UI-UX-DESIGN?node-id=176-1209&p=f&scaling=scale-down&content-scaling=fixed&page-id=176%3A1160&starting-point-node-id=176%3A1209&embed-host=share";
   const figmaEmbedDesignLink = "https://embed.figma.com/proto/CgWHWxrhmcAHSufSmq3fyf/UI-UX-DESIGN?node-id=176-1209&p=f&scaling=scale-down&content-scaling=fixed&page-id=176%3A1160&starting-point-node-id=176%3A1209&embed-host=share";
 
@@ -44,74 +35,72 @@ export default function PortfolioSections() {
 
   const testers = [
     {
-      name: "Tester 1",
-      role: "Komuter Harian",
-      feedback: "Mudah digunakan. Alur pemesanan dari awal sampai akhir terasa sangat natural dan tidak membingungkan.",
-      initials: "T1",
-      bgAvatar: "bg-emerald-500/20 text-emerald-300 border border-emerald-500/30",
-      docImage: "/dokumentasi1.png"
+      name: "Hayyu Adhini Wahida",
+      role: "User Tester 1 • 19 Tahun • Mahasiswa",
+      feedback: "Sebagai mahasiswa yang sering pulang pergi antar kota, integrasi jadwal dari NusaGo ini membantu banget. Biasanya aku harus buka-tutup 3 aplikasi berbeda cuma buat nyesuaiin jam transit kereta ke terminal bus.",
+      initials: "HA",
+      bgAvatar: "bg-[#16221f] text-[#a3b899] border border-[#2a3b35]",
+      docImage: "/dokumentasi1.jpeg" 
     },
     {
-      name: "Tester 2",
-      role: "Pengguna Umum",
-      feedback: "Pemesanan tiket jelas. Informasi transfer antar moda transportasi tergambar transparan di layar utama.",
-      initials: "T2",
-      bgAvatar: "bg-blue-500/20 text-blue-300 border border-blue-500/30",
-      docImage: "/dokumentasi2.png"
-    },
-    {
-      name: "Tester 3",
-      role: "Mahasiswa / Traveler",
-      feedback: "Pemesanan tiket jelas. Informasi transfer antar moda transportasi tergambar transparan di layar utama.",
-      initials: "T3",
-      bgAvatar: "bg-amber-500/20 text-amber-300 border border-amber-500/30",
-      docImage: "/dokumentasi3.png"
+      name: "Nadhin Ayudya Rahmadhani",
+      role: "User Tester 2 • 19 Tahun • Mahasiswa",
+      feedback: "Alur interaksi pemesanannya jelas banget. Aku paling suka visualisasi matrik pembayaran satu pintu di bagian akhir, jadi aku nggak bingung lagi bedain struk bayar buat travel dan buat tiket busnya.",
+      initials: "NA",
+      bgAvatar: "bg-[#16221f] text-[#a3b899] border border-[#2a3b35]",
+      docImage: "/dokumentasi2.jpeg" 
     }
   ];
 
   return (
     <div 
-      className="text-neutral-100 min-h-screen relative overflow-hidden font-sans"
+      className="text-[#d1d5db] min-h-screen relative overflow-hidden font-sans"
       style={{
-        backgroundColor: "#050505",
+        backgroundColor: "#0a0c0b", // Canvas gelap alami dengan bias zaitun tipis (gaya Linear/Apple)
         backgroundImage: `
-          linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px)
+          linear-gradient(rgba(255, 255, 255, 0.008) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.008) 1px, transparent 1px)
         `,
         backgroundSize: "40px 40px"
       }}
     >
       
-      <div className="absolute top-[5%] left-[-5%] w-[600px] h-[600px] rounded-full bg-emerald-950/20 blur-[130px] pointer-events-none" />
-      <div className="absolute top-[45%] right-[-5%] w-[500px] h-[500px] rounded-full bg-emerald-900/10 blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-[5%] left-[15%] w-[600px] h-[600px] rounded-full bg-emerald-950/25 blur-[150px] pointer-events-none" />
+      {/* Pendaran ambient yang diperhalus agar tidak silau */}
+      <div className="absolute top-[10%] left-[-5%] w-[500px] h-[500px] rounded-full bg-[#1e2e28]/10 blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-[10%] right-[-5%] w-[500px] h-[500px] rounded-full bg-[#172420]/10 blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
         {/* ======================================================== */}
         {/* TAHAP 3: IDEATE SECTION                                  */}
         {/* ======================================================== */}
-        <section id="ideate" className="py-20 border-t border-white/5">
-          <div className="mb-12 text-center">
-            <span className="text-emerald-400 text-sm font-semibold tracking-wider uppercase">Proses Desain — Tahap 3</span>
-            <h2 className="text-4xl font-extrabold mt-2 tracking-tight text-white">Ideate</h2>
-            <p className="text-neutral-400 mt-4 max-w-2xl leading-relaxed mx-auto">
+        <section id="ideate" className="py-20 border-t border-[#161a18]">
+          <div className="mb-12 text-center space-y-3">
+            <span className="text-[#a3b899] text-[11px] font-bold tracking-widest uppercase bg-[#182521] border border-[#2d423a] py-1.5 px-3 rounded-full">
+              Proses Desain — Tahap 3
+            </span>
+            <h2 className="text-4xl font-extrabold tracking-tight text-[#f3f4f6] pt-1">Ideate</h2>
+            <p className="text-[#9ca3af] max-w-2xl leading-relaxed text-sm md:text-base mx-auto">
               Menyusun ideasi solusi menggunakan grid eksplorasi kreatif, memetakan alur kerja sistem, hingga membangun pondasi visual komponen aplikasi.
             </p>
           </div>
 
-          <div className="flex flex-col gap-12 max-w-5xl mx-auto">
+          <div className="flex flex-col gap-12 max-w-4xl mx-auto">
             {ideateCards.map((card, index) => (
               <div 
                 key={index} 
-                className="bg-white/[0.03] border border-white/[0.08] backdrop-blur-xl rounded-[24px] p-6 transition-all duration-300 hover:border-emerald-700 hover:shadow-[0_0_40px_rgba(0,108,2,0.2)] flex flex-col w-full"
+                className="bg-[#111513] border border-[#1f2623] rounded-[24px] p-6 transition-all duration-300 hover:-translate-y-1.5 hover:bg-[#151b18] hover:border-[#384a41] hover:shadow-[0_20px_50px_rgba(0,0,0,0.8)] flex flex-col w-full group"
               >
                 <div className="mb-4">
-                  <h3 className="text-2xl font-bold text-emerald-400 mb-1">{card.title}</h3>
-                  <p className="text-neutral-400 text-sm leading-relaxed">{card.description}</p>
+                  <h3 className="text-2xl font-bold text-[#b4c3b1] group-hover:text-[#cbd5e1] transition-colors mb-1">
+                    {card.title}
+                  </h3>
+                  <p className="text-[#9ca3af] text-sm leading-relaxed transition-colors group-hover:text-[#cbd5e1]">
+                    {card.description}
+                  </p>
                 </div>
-                <div className="w-full aspect-video min-h-[450px] bg-neutral-900/90 rounded-xl overflow-hidden border border-white/5 relative">
-                  <iframe src={card.embedUrl} className="w-full h-full border-0 opacity-90 hover:opacity-100 transition-opacity" allowFullScreen loading="lazy" />
+                <div className="w-full aspect-video min-h-[420px] bg-[#070a09] rounded-xl overflow-hidden border border-[#19201d] relative">
+                  <iframe src={card.embedUrl} className="w-full h-full border-0 opacity-80 group-hover:opacity-100 transition-opacity" allowFullScreen loading="lazy" />
                 </div>
               </div>
             ))}
@@ -121,40 +110,42 @@ export default function PortfolioSections() {
         {/* ======================================================== */}
         {/* TAHAP 4: PROTOTYPE SECTION                               */}
         {/* ======================================================== */}
-        <section id="prototype" className="py-20 border-t border-white/5">
+        <section id="prototype" className="py-20 border-t border-[#161a18]">
           <div className="mb-8 flex flex-col items-center text-center gap-4">
-            <div>
-              <span className="text-emerald-400 text-sm font-semibold tracking-wider uppercase">Proses Desain — Tahap 4</span>
-              <h2 className="text-4xl font-extrabold mt-2 tracking-tight text-white">Interactive Prototype</h2>
-              <p className="text-neutral-400 mt-3 max-w-2xl leading-relaxed mx-auto">
-                Mengembangkan desain beresolusi tinggi menjadi purwarupa interaktif yang dapat diuji coba langsung.
+            <div className="space-y-3">
+              <span className="text-[#a3b899] text-[11px] font-bold tracking-widest uppercase bg-[#182521] border border-[#2d423a] py-1.5 px-3 rounded-full">
+                Proses Desain — Tahap 4
+              </span>
+              <h2 className="text-4xl font-extrabold tracking-tight text-[#f3f4f6] pt-1">Interactive Prototype</h2>
+              <p className="text-[#9ca3af] max-w-2xl leading-relaxed text-sm md:text-base mx-auto">
+                Mengembangkan desain beresolusi tinggi menjadi purwarupa interaktif yang dapat diuji coba langsung melalui bingkai simulasi gadget.
               </p>
             </div>
 
-            <div className="flex items-center gap-3 shrink-0 mt-2">
+            {/* Tombol Aksi Premium */}
+            <div className="flex flex-wrap items-center justify-center gap-3 shrink-0 mt-2">
               <button
                 onClick={() => setPrototypeMode(prototypeMode === "player" ? "design" : "player")}
-                className="flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold border bg-emerald-700 border-emerald-700 text-white shadow-lg shadow-emerald-950/50 transition-all cursor-pointer"
+                className="flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-bold bg-[#22332c] hover:bg-[#2c4239] border border-[#385247] text-[#f3f4f6] shadow-xl transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
               >
-                <Play className="w-4 h-4 fill-current" />
+                <Play className="w-4 h-4 fill-current text-[#b4c3b1]" />
                 Coba Prototype
               </button>
 
               <button
                 onClick={() => window.open(figmaDesignLink, "_blank")}
-                className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-sm font-semibold bg-white/5 border border-white/10 text-neutral-300 hover:bg-white/10 hover:text-white transition-all cursor-pointer"
+                className="flex items-center gap-1.5 px-5 py-3 rounded-xl text-sm font-bold bg-[#111513] hover:bg-[#181f1b] border border-[#1f2623] hover:border-[#2f3b36] text-[#d1d5db] hover:text-white transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
               >
                 Buka Figma
-                <ArrowUpRight className="w-4 h-4 text-neutral-500" />
+                <ArrowUpRight className="w-4 h-4 text-stone-500" />
               </button>
             </div>
           </div>
 
-          {/* UKURAN CONTAINER DISET KE max-w-md DAN h-[720px] AGAR PAS DENGAN FRAME IPHONE FIGMA KAMU */}
-          <div className="max-w-md mx-auto w-full h-[720px] bg-neutral-900/90 rounded-[24px] overflow-hidden border border-white/5 shadow-2xl transition-all duration-300">
+          <div className="max-w-md mx-auto w-full h-[720px] bg-[#111513] rounded-[32px] overflow-hidden border border-[#1f2623] shadow-2xl p-4 flex items-center justify-center">
             <iframe 
               src={prototypeMode === "player" ? figmaEmbedPlayerLink : figmaEmbedDesignLink} 
-              className="w-full h-full border-0" 
+              className="w-full h-full border-0 rounded-[22px] bg-[#070a09]" 
               allowFullScreen 
               loading="lazy" 
             />
@@ -164,46 +155,60 @@ export default function PortfolioSections() {
         {/* ======================================================== */}
         {/* TAHAP 5: TESTING SECTION                                 */}
         {/* ======================================================== */}
-        <section id="test" className="py-20 border-t border-white/5 mb-16">
-          <div className="mb-12 text-center">
-            <span className="text-emerald-400 text-sm font-semibold tracking-wider uppercase">Proses Desain — Tahap 5</span>
-            <h2 className="text-4xl font-extrabold mt-2 tracking-tight text-white">Testing</h2>
-            <p className="text-neutral-400 mt-4 max-w-2xl leading-relaxed mx-auto">
-              Melakukan validasi interaksi langsung kepada pengguna target lewat metode *Usability Testing*.
+        <section id="test" className="py-20 border-t border-[#161a18] mb-24">
+          <div className="mb-16 text-center space-y-3">
+            <span className="text-[#a3b899] text-[11px] font-bold tracking-widest uppercase bg-[#182521] border border-[#2d423a] py-1.5 px-3 rounded-full">
+              Proses Desain — Tahap 5
+            </span>
+            <h2 className="text-4xl font-extrabold tracking-tight text-[#f3f4f6] pt-1">Testing & Validation</h2>
+            <p className="text-[#9ca3af] max-w-2xl leading-relaxed text-sm md:text-base mx-auto">
+              Melakukan uji validasi langsung kepada pengguna target lewat metode <span className="text-[#b4c3b1] font-bold">Usability Testing</span> untuk mengukur tingkat kepuasan dan efisiensi antarmuka.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto">
+          <div className="flex flex-col gap-8 max-w-4xl mx-auto">
             {testers.map((tester, index) => (
               <div 
                 key={index} 
-                className="bg-white/[0.03] border border-white/[0.08] backdrop-blur-xl rounded-[24px] p-6 transition-all duration-300 hover:border-emerald-700 hover:shadow-[0_0_30px_rgba(0,108,2,0.15)] flex flex-col justify-between"
+                className="group relative bg-[#111513] border border-[#1f2623] rounded-[28px] p-6 lg:p-8 transition-all duration-500 hover:-translate-y-1.5 hover:bg-[#151b18] hover:border-[#384a41] hover:shadow-[0_20px_50px_rgba(0,0,0,0.8)] flex flex-col sm:flex-row gap-6 items-center overflow-hidden"
               >
-                <div>
-                  <div className="mb-4">
-                    <p className="text-neutral-300 italic text-sm leading-relaxed">
-                      “{tester.feedback}”
-                    </p>
-                  </div>
-
-                  <div className="w-full aspect-video rounded-xl overflow-hidden border border-white/10 bg-neutral-900/50 mb-4">
-                    <img 
-                      src={tester.docImage} 
-                      alt={`Dokumentasi ${tester.name}`}
-                      className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity"
-                    />
-                  </div>
+                <div className="absolute right-6 top-0 text-[160px] font-serif text-white/[0.01] select-none pointer-events-none leading-none">
+                  ”
                 </div>
 
-                <div className="flex items-center gap-3 pt-4 border-t border-white/5">
-                  <div className={`w-9 h-9 rounded-full flex items-center justify-center font-bold text-xs shrink-0 shadow-inner ${tester.bgAvatar}`}>
-                    {tester.initials}
-                  </div>
+                {/* Dokumentasi */}
+                <div className={`w-36 h-36 shrink-0 rounded-2xl overflow-hidden border border-[#1f2623] bg-[#070a09] relative shadow-md transition-transform duration-500 group-hover:scale-[1.02] ${index % 2 === 1 ? 'sm:order-last' : ''}`}>
+                  <img 
+                    src={tester.docImage} 
+                    alt={`Dokumentasi Usability Testing NusaGo - ${tester.name}`}
+                    className="w-full h-full object-cover object-top opacity-70 group-hover:opacity-100 transition-all duration-500 filter grayscale group-hover:grayscale-0"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+                </div>
+
+                {/* Konten Komentar */}
+                <div className="flex-1 flex flex-col justify-between h-full space-y-4 relative z-10 w-full">
                   <div>
-                    <h4 className="font-bold text-neutral-200 text-xs">{tester.name}</h4>
-                    <p className="text-neutral-500 text-[10px] mt-0.5">{tester.role}</p>
+                    <span className="text-[10px] font-bold tracking-widest text-[#a3b899] uppercase bg-[#16221f] border border-[#2a3b35] px-2.5 py-1 rounded-md">
+                      User Feedback
+                    </span>
+                    <blockquote className="text-[#cbd5e1] font-medium text-sm md:text-base leading-relaxed mt-3 italic transition-colors duration-500 group-hover:text-white">
+                      “{tester.feedback}”
+                    </blockquote>
+                  </div>
+
+                  {/* Profil Identitas */}
+                  <div className="flex items-center gap-3 pt-3 border-t border-[#1f2623]">
+                    <div className={`w-9 h-9 rounded-full flex items-center justify-center font-bold text-xs shrink-0 shadow-inner tracking-tight ${tester.bgAvatar}`}>
+                      {tester.initials}
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h4 className="font-bold text-[#f3f4f6] text-sm truncate">{tester.name}</h4>
+                      <p className="text-[#9ca3af] text-xs mt-0.5 font-medium truncate">{tester.role}</p>
+                    </div>
                   </div>
                 </div>
+
               </div>
             ))}
           </div>
