@@ -18,7 +18,7 @@ export default function Hero() {
         {/* Kolom Kiri: Informasi Project */}
         <div className="lg:col-span-7 space-y-6">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-medium">
-            ✨ UI/UX Case Study • 2026
+             UI/UX Case Study • 2026
           </div>
           
           <h1 className="text-6xl md:text-7xl font-extrabold tracking-tight bg-gradient-to-r from-white via-gray-200 to-gray-500 bg-clip-text text-transparent">
@@ -31,9 +31,9 @@ export default function Hero() {
 
           {/* Badges Informasi */}
           <div className="flex flex-wrap gap-3 pt-2">
-            <span className="px-3 py-1.5 bg-white/5 border border-white/10 rounded-xl text-sm text-gray-300">📱 Mobile App</span>
-            <span className="px-3 py-1.5 bg-white/5 border border-white/10 rounded-xl text-sm text-gray-300">⏱️ 3 Weeks Project</span>
-            <span className="px-3 py-1.5 bg-white/5 border border-white/10 rounded-xl text-sm text-gray-300">👤 Solo UI/UX Designer</span>
+            <span className="px-3 py-1.5 bg-white/5 border border-white/10 rounded-xl text-sm text-gray-300"> Mobile App</span>
+            <span className="px-3 py-1.5 bg-white/5 border border-white/10 rounded-xl text-sm text-gray-300"> 3 Weeks Project</span>
+            <span className="px-3 py-1.5 bg-white/5 border border-white/10 rounded-xl text-sm text-gray-300"> Solo UI/UX Designer</span>
           </div>
 
           {/* CTA Buttons */}
@@ -53,19 +53,12 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* ========================================================================= */}
-        {/* BARIS DI BAWAH INI ADALAH BAGIAN MOCKUP HP YANG SUDAH DIBENAHI TOTAL     */}
-        {/* ========================================================================= */}
+        {/* Kolom Kanan: Mockup HP */}
         <div className="lg:col-span-5 flex justify-center lg:justify-end relative items-center">
-          
-          {/* Efek Glow Lembut di Belakang HP */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] h-[320px] bg-emerald-500/10 blur-[100px] rounded-full pointer-events-none" />
           
-          {/* Frame HP Realistis */}
           <div className="relative w-full max-w-[290px] sm:max-w-[310px] aspect-[9/19] bg-gradient-to-tr from-emerald-500/10 to-white/5 rounded-[40px] p-3 border border-white/10 shadow-2xl backdrop-blur-md transition-all duration-500 hover:scale-[1.02]">
             <div className="w-full h-full bg-[#0D1310] rounded-[32px] overflow-hidden border border-white/5 relative flex items-center justify-center">
-              
-              {/* object-contain membuat gambar pas di tengah, UTUH, dan TIDAK GEPENG */}
               <Image 
                 src="/logo-nusago.png" 
                 alt="NusaGo UI Mockup" 
@@ -73,63 +66,75 @@ export default function Hero() {
                 priority
                 className="object-contain p-6 transition-transform duration-500"
               />
-
-              {/* Lapisan Kaca/Refleksi Tipis */}
               <div className="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/[0.02] to-white/0 pointer-events-none" />
-              
             </div>
           </div>
         </div>
-        {/* ========================================================================= */}
 
       </section>
 
       {/* 3. SECTION STATISTIK */}
       <section className="max-w-7xl mx-auto px-6 py-12 relative z-10">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+          <div className="group p-6 bg-white/[0.02] border border-white/5 hover:border-emerald-500/30 rounded-2xl backdrop-blur-md transition-all duration-300 hover:-translate-y-1">
+            <h2 className="text-4xl md:text-5xl font-extrabold text-emerald-400 tracking-tight">4+</h2>
+            <p className="text-sm md:text-base text-gray-400 mt-2 font-medium">Moda Layanan</p>
+          </div>
+          <div className="group p-6 bg-white/[0.02] border border-white/5 hover:border-emerald-500/30 rounded-2xl backdrop-blur-md transition-all duration-300 hover:-translate-y-1">
+            <h2 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">40+</h2>
+            <p className="text-sm md:text-base text-gray-400 mt-2 font-medium">Screen Desain</p>
+          </div>
+          <div className="group p-6 bg-white/[0.02] border border-white/5 hover:border-emerald-500/30 rounded-2xl backdrop-blur-md transition-all duration-300 hover:-translate-y-1">
+            <h2 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">3</h2>
+            <p className="text-sm md:text-base text-gray-400 mt-2 font-medium">User Tester</p>
+          </div>
+          <div className="group p-6 bg-white/[0.02] border border-white/5 hover:border-emerald-500/30 rounded-2xl backdrop-blur-md transition-all duration-300 hover:-translate-y-1">
+            <h2 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">1</h2>
+            <p className="text-sm md:text-base text-gray-400 mt-2 font-medium">Interactive Prototype</p>
+          </div>
+        </div>
+      </section>
+
+      {/* ========================================================================= */}
+      {/* 4. SECTION PROFIL DI TARUH DI BAWAH SENDIRI (PENUTUP HALAMAN)            */}
+      {/* ========================================================================= */}
+      <section className="max-w-7xl mx-auto px-6 pt-16 pb-24 relative z-10 border-t border-white/5">
+        <div className="bg-white/[0.01] border border-white/5 rounded-3xl p-8 md:p-10 backdrop-blur-md flex flex-col md:flex-row items-center gap-8 md:gap-12">
           
-          {/* Card 1: Layanan */}
-          <div className="group p-6 bg-white/[0.02] border border-white/5 hover:border-emerald-500/30 rounded-2xl backdrop-blur-md transition-all duration-300 hover:-translate-y-1">
-            <h2 className="text-4xl md:text-5xl font-extrabold text-emerald-400 tracking-tight group-hover:scale-105 transition-transform duration-300">
-              4+
-            </h2>
-            <p className="text-sm md:text-base text-gray-400 mt-2 font-medium">
-              Moda Layanan <span className="text-xs block text-gray-500 font-normal">(Motor, Mobil, Bus, Kereta)</span>
-            </p>
+          {/* Bingkai lingkaran foto profil */}
+          <div className="relative w-32 h-32 md:w-36 md:h-36 flex-shrink-0">
+            <div className="absolute inset-0 bg-gradient-to-tr from-emerald-500 to-green-400 rounded-full opacity-20 blur-sm" />
+            <div className="w-full h-full rounded-full overflow-hidden border border-white/10 relative p-1 bg-[#0A0F0D]">
+              <div className="w-full h-full rounded-full overflow-hidden relative bg-neutral-800">
+                <Image
+                  src="/profil-widya.JPG"
+                  alt="Widya Ony Yusnitra Rahayu"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
           </div>
 
-          {/* Card 2: Screen Design */}
-          <div className="group p-6 bg-white/[0.02] border border-white/5 hover:border-emerald-500/30 rounded-2xl backdrop-blur-md transition-all duration-300 hover:-translate-y-1">
-            <h2 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight group-hover:scale-105 transition-transform duration-300">
-              60+
-            </h2>
-            <p className="text-sm md:text-base text-gray-400 mt-2 font-medium">
-              Screen Desain <span className="text-xs block text-gray-500 font-normal">(High-Fidelity UI)</span>
+          {/* Data Diri */}
+          <div className="flex-1 text-center md:text-left space-y-2">
+            <span className="text-emerald-400 font-semibold tracking-wider text-[11px] uppercase bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/10">
+              The Designer
+            </span>
+            <h3 className="text-2xl font-bold tracking-tight text-white pt-1">
+              Widya Ony Yusnitra Rahayu
+            </h3>
+            <p className="text-xs text-emerald-500/80 font-medium">
+              D3 Teknologi Informasi • UI/UX Student Project
             </p>
-          </div>
-
-          {/* Card 3: Tester */}
-          <div className="group p-6 bg-white/[0.02] border border-white/5 hover:border-emerald-500/30 rounded-2xl backdrop-blur-md transition-all duration-300 hover:-translate-y-1">
-            <h2 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight group-hover:scale-105 transition-transform duration-300">
-              5
-            </h2>
-            <p className="text-sm md:text-base text-gray-400 mt-2 font-medium">
-              User Tester <span className="text-xs block text-gray-500 font-normal">(Usability Testing)</span>
-            </p>
-          </div>
-
-          {/* Card 4: Prototype */}
-          <div className="group p-6 bg-white/[0.02] border border-white/5 hover:border-emerald-500/30 rounded-2xl backdrop-blur-md transition-all duration-300 hover:-translate-y-1">
-            <h2 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight group-hover:scale-105 transition-transform duration-300">
-              1
-            </h2>
-            <p className="text-sm md:text-base text-gray-400 mt-2 font-medium">
-              Interactive Prototype <span className="text-xs block text-gray-500 font-normal">(Figma Terintegrasi)</span>
+            <p className="text-neutral-400 text-sm leading-relaxed max-w-2xl pt-2">
+              Halo! Saya adalah mahasiswi D3 Teknologi Informasi Politeknik Negeri Madiun yang merancang studi kasus NusaGo ini sebagai proyek utama untuk mata kuliah UI/UX Design. Di proyek ini, saya bertanggung jawab penuh dalam melakukan riset pengguna, menyusun arsitektur informasi, hingga mengimplementasikannya ke dalam desain antarmuka digital yang intuitif.
             </p>
           </div>
 
         </div>
       </section>
+      {/* ========================================================================= */}
 
     </div>
   );
