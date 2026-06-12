@@ -27,10 +27,10 @@ export default function Navbar() {
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 font-sans ${
           scrolled
-            // Ketika di-scroll: Menggunakan warna solid charcoal transparan dengan blur
-            ? "bg-[#121414]/90 backdrop-blur-xl border-b border-stone-800/60 py-4 shadow-[0_4px_30px_rgba(0,0,0,0.2)]"
-            // Ketika di atas: Menggunakan warna solid charcoal penuh tanpa gradasi ke transparan
-            : "bg-[#121414] py-5"
+            // Ketika di-scroll: Menggunakan warna putih susu semi-transparan dengan efek blur kaca premium
+            ? "bg-white/80 backdrop-blur-md border-b border-stone-200/60 py-4 shadow-[0_4px_24px_rgba(0,0,0,0.03)]"
+            // Ketika di paling atas: Transparan penuh agar menyatu bersih dengan latar putih Hero
+            : "bg-transparent py-5"
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
@@ -46,8 +46,8 @@ export default function Navbar() {
             />
           </a>
 
-          {/* SISI KANAN: MENU KAPSUL (BENTO NAV STYLE) */}
-          <div className="hidden md:flex items-center gap-1 bg-stone-900/40 border border-stone-800/80 p-1.5 rounded-full backdrop-blur-md">
+          {/* SISI KANAN: MENU KAPSUL (BENTO NAV STYLE - ADAPTIF LIGHT MODE) */}
+          <div className="hidden md:flex items-center gap-1 bg-stone-100/80 border border-stone-200/60 p-1.5 rounded-full backdrop-blur-md">
             {menuItems.map((item) => {
               const isActive = activeMenu === item;
               const linkId = item.toLowerCase();
@@ -57,15 +57,17 @@ export default function Navbar() {
                   key={item}
                   href={`#${linkId}`}
                   onClick={() => setActiveMenu(item)}
-                  className={`relative px-4 py-2 rounded-full text-xs font-medium tracking-wide transition-all duration-300 cursor-pointer ${
+                  className={`relative px-4 py-2 rounded-full text-xs font-semibold tracking-wide transition-all duration-300 cursor-pointer ${
                     isActive
-                      ? "text-stone-100 font-semibold"
-                      : "text-stone-400 hover:text-stone-200"
+                      // Teks menu aktif: Putih bersih di atas kapsul hijau
+                      ? "text-white font-bold"
+                      // Teks menu biasa: Abu-abu gelap kontras tinggi agar mudah dibaca
+                      : "text-stone-500 hover:text-stone-900"
                   }`}
                 >
-                  {/* Pill background: Menggunakan warna hijau hutan solid datar */}
+                  {/* Pill background: Menggunakan warna hijau hutan segar yang menyala di latar putih */}
                   {isActive && (
-                    <div className="absolute inset-0 bg-emerald-800 rounded-full z-[-1] border border-emerald-700/50 shadow-sm" />
+                    <div className="absolute inset-0 bg-emerald-700 rounded-full z-[-1] border border-emerald-600/20 shadow-sm" />
                   )}
                   {item}
                 </a>
