@@ -6,8 +6,13 @@ import { Play, ArrowUpRight } from "lucide-react";
 export default function PortfolioSections() {
   const [prototypeMode, setPrototypeMode] = useState<"design" | "player">("player");
 
+  // LINK UTAMA FIGMA
   const figmaDesignLink = "https://www.figma.com/design/CgWHWxrhmcAHSufSmq3fyf/UI-UX-DESIGN?node-id=176-1160"; 
-  const figmaEmbedPlayerLink = "https://embed.figma.com/proto/CgWHWxrhmcAHSufSmq3fyf/UI-UX-DESIGN?node-id=176-1209&p=f&scaling=scale-down&content-scaling=fixed&page-id=176%3A1160&starting-point-node-id=176%3A1209&embed-host=share";
+  
+  // LINK PROTOTYPE TERBARU YANG KAMU KIRIM (UNTUK TOMBOL COBA PROTOTYPE)
+  const figmaEmbedPlayerLink = "https://www.figma.com/proto/CgWHWxrhmcAHSufSmq3fyf/UI-UX-DESIGN?node-id=176-1209&p=f&t=h3i3paOJdNP00vDm-1&scaling=scale-down&content-scaling=fixed&page-id=176%3A1160&starting-point-node-id=176%3A1209";
+  
+  // LINK EMBED FIGMA (UNTUK FRAME HP DI BAWAHNYA)
   const figmaEmbedDesignLink = "https://embed.figma.com/proto/CgWHWxrhmcAHSufSmq3fyf/UI-UX-DESIGN?node-id=176-1209&p=f&scaling=scale-down&content-scaling=fixed&page-id=176%3A1160&starting-point-node-id=176%3A1209&embed-host=share";
 
   const ideateCards = [
@@ -56,16 +61,17 @@ export default function PortfolioSections() {
     <div 
       className="text-[#d1d5db] min-h-screen relative overflow-hidden font-sans"
       style={{
-        backgroundColor: "#0a0c0b", // Canvas gelap alami dengan bias zaitun tipis (gaya Linear/Apple)
+        backgroundColor: "#0a0c0b",
+        /* BACKGROUND KOTAK-KOTAK ELEGAN (GRID SUBTLE 2.5%) */
         backgroundImage: `
-          linear-gradient(rgba(255, 255, 255, 0.008) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(255, 255, 255, 0.008) 1px, transparent 1px)
+          linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px)
         `,
-        backgroundSize: "40px 40px"
+        backgroundSize: "44px 44px"
       }}
     >
       
-      {/* Pendaran ambient yang diperhalus agar tidak silau */}
+      {/* Pendaran ambient (Glow effect lembut) */}
       <div className="absolute top-[10%] left-[-5%] w-[500px] h-[500px] rounded-full bg-[#1e2e28]/10 blur-[120px] pointer-events-none" />
       <div className="absolute bottom-[10%] right-[-5%] w-[500px] h-[500px] rounded-full bg-[#172420]/10 blur-[120px] pointer-events-none" />
 
@@ -124,14 +130,16 @@ export default function PortfolioSections() {
 
             {/* Tombol Aksi Premium */}
             <div className="flex flex-wrap items-center justify-center gap-3 shrink-0 mt-2">
+              {/* TOMBOL COBA PROTOTYPE (SUDAH MEMBUKA TAB BARU KE LINK TERBARU) */}
               <button
-                onClick={() => setPrototypeMode(prototypeMode === "player" ? "design" : "player")}
+                onClick={() => window.open(figmaEmbedPlayerLink, "_blank")}
                 className="flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-bold bg-[#22332c] hover:bg-[#2c4239] border border-[#385247] text-[#f3f4f6] shadow-xl transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
               >
                 <Play className="w-4 h-4 fill-current text-[#b4c3b1]" />
                 Coba Prototype
               </button>
 
+              {/* TOMBOL BUKA FIGMA */}
               <button
                 onClick={() => window.open(figmaDesignLink, "_blank")}
                 className="flex items-center gap-1.5 px-5 py-3 rounded-xl text-sm font-bold bg-[#111513] hover:bg-[#181f1b] border border-[#1f2623] hover:border-[#2f3b36] text-[#d1d5db] hover:text-white transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
@@ -142,9 +150,10 @@ export default function PortfolioSections() {
             </div>
           </div>
 
+          {/* Bingkai HP Simulasi */}
           <div className="max-w-md mx-auto w-full h-[720px] bg-[#111513] rounded-[32px] overflow-hidden border border-[#1f2623] shadow-2xl p-4 flex items-center justify-center">
             <iframe 
-              src={prototypeMode === "player" ? figmaEmbedPlayerLink : figmaEmbedDesignLink} 
+              src={figmaEmbedDesignLink} 
               className="w-full h-full border-0 rounded-[22px] bg-[#070a09]" 
               allowFullScreen 
               loading="lazy" 
