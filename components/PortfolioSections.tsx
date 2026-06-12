@@ -6,13 +6,17 @@ import { Play, ArrowUpRight } from "lucide-react";
 export default function PortfolioSections() {
   const [prototypeMode, setPrototypeMode] = useState<"design" | "player">("player");
 
-  // LINK UTAMA FIGMA
-  const figmaDesignLink = "https://www.figma.com/design/CgWHWxrhmcAHSufSmq3fyf/UI-UX-DESIGN?node-id=176-1160"; 
+  // ========================================================
+  // KONFIGURASI LINK FIGMA (AMAN: KANVAS DESAIN DISEMBUNYIKAN)
+  // ========================================================
   
-  // LINK PROTOTYPE TERBARU YANG KAMU KIRIM (UNTUK TOMBOL COBA PROTOTYPE)
+  // Tombol "Buka Figma" sekarang diarahkan ke halaman presentasi play, bukan kanvas kerja
+  const figmaDesignLink = "https://www.figma.com/proto/CgWHWxrhmcAHSufSmq3fyf/UI-UX-DESIGN?node-id=176-1209&p=f&t=h3i3paOJdNP00vDm-1&scaling=scale-down&content-scaling=fixed&page-id=176%3A1160&starting-point-node-id=176%3A1209"; 
+  
+  // Tombol "Coba Prototype" mengarah ke halaman presentasi play yang sama
   const figmaEmbedPlayerLink = "https://www.figma.com/proto/CgWHWxrhmcAHSufSmq3fyf/UI-UX-DESIGN?node-id=176-1209&p=f&t=h3i3paOJdNP00vDm-1&scaling=scale-down&content-scaling=fixed&page-id=176%3A1160&starting-point-node-id=176%3A1209";
   
-  // LINK EMBED FIGMA (UNTUK FRAME HP DI BAWAHNYA)
+  // Link khusus embed frame HP biar tetap bisa interaksi di dalam website kamu
   const figmaEmbedDesignLink = "https://embed.figma.com/proto/CgWHWxrhmcAHSufSmq3fyf/UI-UX-DESIGN?node-id=176-1209&p=f&scaling=scale-down&content-scaling=fixed&page-id=176%3A1160&starting-point-node-id=176%3A1209&embed-host=share";
 
   const ideateCards = [
@@ -130,7 +134,7 @@ export default function PortfolioSections() {
 
             {/* Tombol Aksi Premium */}
             <div className="flex flex-wrap items-center justify-center gap-3 shrink-0 mt-2">
-              {/* TOMBOL COBA PROTOTYPE (SUDAH MEMBUKA TAB BARU KE LINK TERBARU) */}
+              {/* TOMBOL COBA PROTOTYPE */}
               <button
                 onClick={() => window.open(figmaEmbedPlayerLink, "_blank")}
                 className="flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-bold bg-[#22332c] hover:bg-[#2c4239] border border-[#385247] text-[#f3f4f6] shadow-xl transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
@@ -139,7 +143,7 @@ export default function PortfolioSections() {
                 Coba Prototype
               </button>
 
-              {/* TOMBOL BUKA FIGMA */}
+              {/* TOMBOL BUKA FIGMA (SEKARANG AMAN DARI KANVAS DESAIN) */}
               <button
                 onClick={() => window.open(figmaDesignLink, "_blank")}
                 className="flex items-center gap-1.5 px-5 py-3 rounded-xl text-sm font-bold bg-[#111513] hover:bg-[#181f1b] border border-[#1f2623] hover:border-[#2f3b36] text-[#d1d5db] hover:text-white transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
